@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>donor-details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>FullName</ion-label>
+      <ion-input type="text" [(ngModel)]="fullname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>ContactNo</ion-label>
+      <ion-input type="number" [(ngModel)]="contactno"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-label>Blood Group</ion-label>
+        <ion-select [(ngModel)]="bloodgroup">
+          <ion-option value="A+">A+</ion-option>
+          <ion-option value="B+">B+</ion-option>
+          <ion-option value="O+">O+</ion-option>
+          <ion-option value="AB+">AB+</ion-option>
+          <ion-option value="A-">A-</ion-option>
+          <ion-option value="B-">B-</ion-option>
+          <ion-option value="O-">O-</ion-option>
+          <ion-option value="AB-">AB-</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label>Date Of Birth</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [(ngModel)]="dateofbirth"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <button [disabled]="!fullname || !address || !contactno || !dateofbirth || !bloodgroup" ion-button color="danger" (click)="saveDonor()">Add</button>
+</ion-content>
